@@ -1,34 +1,61 @@
 .App {
   /* text-align: center; */
-  width: 650px;
   margin: 10px auto;
+  background:rgb(243, 243, 243);
 }
 /* header */
+.header{
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  background:white;
+  /* position: fixed ; */
+  border-bottom: 1px solid rgb(228, 228, 228);
+  align-items: center;
+
+}
+
 .header-left{
 display:flex;
 align-items: center;
 }
 
 .instagram-logo{
-width:50px;
+  width:40px;
+  padding:0 20px ;
+  border-right: 1px solid black;
 }
 
 .instagram-text{
   width:200px;
+}
 
+.bar{
+  border: 1px solid rgb(228, 228, 228);
+  width: 300px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.nav{
+  width:200px;
+padding:0 20px ;
+justify-content: flex-end;
 }
 
 /* post container */
 .post {
   border: 1px solid rgb(228, 228, 228);
   border-radius: 4px;
-  margin-top:70px;
+ background:white;
+  width: 650px;
+  margin: 70px auto 0 auto;
 }
 
 .postie {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   margin: auto 0;
 }
 .thumbNail {

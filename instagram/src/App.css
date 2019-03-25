@@ -1,33 +1,67 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  width: 650px;
+  margin: 10px auto;
+}
+/* header */
+.header-left{
+display:flex;
+align-items: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.instagram-logo{
+width:50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.instagram-text{
+  width:200px;
+
+}
+
+/* post container */
+.post {
+  border: 1px solid rgb(228, 228, 228);
+  border-radius: 4px;
+  margin-top:70px;
+}
+
+.postie {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
+  margin: auto 0;
+}
+.thumbNail {
+  border-radius: 100%;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+.photo {
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.like {
+  height: 30px;
+  padding-right: 20px;
+}
+
+.comment {
+  height: 32px;
+}
+
+.bottom-info {
+  margin: 0 20px;
+  padding: 0;
+  border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.timestamp {
+  color: rgb(126, 126, 126);
 }

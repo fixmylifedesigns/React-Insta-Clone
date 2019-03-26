@@ -1,53 +1,67 @@
 .App {
   /* text-align: center; */
+  width: 100;
   margin: 10px auto;
-  background:rgb(243, 243, 243);
+  background: rgb(245, 245, 245);
+  line-height: 1;
 }
 /* header */
-.header{
-  display:flex;
-  justify-content: space-between;
-  width:100%;
-  background:white;
-  /* position: fixed ; */
+.header-back {
+  padding: 5px 0px;
   border-bottom: 1px solid rgb(228, 228, 228);
+  width: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+}
+
+.header {
+  width: 90%;
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
   align-items: center;
-
 }
 
-.header-left{
-display:flex;
-align-items: center;
+.header-left {
+  display: flex;
+  align-items: center;
 }
 
-.instagram-logo{
-  width:40px;
-  padding:0 20px ;
+.instagram-logo {
+  width: 30px;
+  padding: 0 20px;
   border-right: 1px solid black;
 }
 
-.instagram-text{
-  width:200px;
+.instagram-text {
+  width: 150px;
 }
 
-.bar{
+.bar {
   border: 1px solid rgb(228, 228, 228);
   width: 300px;
   height: 30px;
   border-radius: 4px;
+  text-align: center;
+  background: rgb(245, 245, 245);
+  font-size: 18px;
+  @media (max-width 500px) {
+    display: none;
+  }
 }
 
-.nav{
-  width:200px;
-padding:0 20px ;
-justify-content: flex-end;
+.nav {
+  width: 150px;
+  padding: 0 20px;
+  justify-content: flex-end;
 }
 
 /* post container */
 .post {
   border: 1px solid rgb(228, 228, 228);
   border-radius: 4px;
- background:white;
+  background: white;
   width: 650px;
   margin: 70px auto 0 auto;
 }
@@ -89,6 +103,21 @@ justify-content: flex-end;
   border-bottom: 1px solid rgb(228, 228, 228);
 }
 
+.username {
+  margin-right: 5px;
+}
+
 .timestamp {
   color: rgb(126, 126, 126);
+}
+
+/* comment bar */
+
+.comment-bar {
+  width: 90%;
+  font-weight: bold;
+  margin: 0 20px;
+  height: 70px;
+  font-size: 20px;
+  border: 1px solid rgb(255, 255, 255);
 }

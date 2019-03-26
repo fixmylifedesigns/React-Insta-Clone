@@ -8,9 +8,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      post: dummyData
+      post: dummyData,
     };
   }
+
+
 
   render() {
     return (

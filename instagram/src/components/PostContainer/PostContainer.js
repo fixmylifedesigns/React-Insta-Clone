@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import CommentSection from "../CommentSection/CommentSection";
 
 import LikeLogo from "../images/like.png";
 import CommentLogo from "../images/comment.png";
@@ -28,20 +29,21 @@ function PostContainer(props) {
               {" "}
               <strong>{post.likes} likes </strong>
             </p>
+
             {post.comments &&
               post.comments.map(event => (
                 <div key={event.id} className="comment-section">
                   <p className="comments">
-                    {" "}
-                    <strong className="username bold">
-                      {event.username}
-                    </strong>{" "}
+                    <strong className="username">{event.username}</strong> 
                     {event.text}
                   </p>
                 </div>
               ))}
+
             <p className="timestamp">{post.timestamp}</p>
           </div>
+
+          <CommentSection />
         </div>
       ))}
     </>

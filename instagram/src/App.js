@@ -8,11 +8,18 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      post: dummyData,
+      post: [],
     };
   }
 
-
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        post: dummyData,
+      });
+    }, 2000);
+  }
+  
 
   render() {
     return (

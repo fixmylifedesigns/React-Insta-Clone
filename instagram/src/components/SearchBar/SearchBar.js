@@ -1,11 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import InstagramLogo from "../images/logo.png";
 import InstagramWord from "../images/instagram.png";
 import Nav from "../images/nav.png";
 
-export default class SearchBar extends Component {
-  render() {
-    return (
+
+
+const SearchBar = props => {
+      return (
       <div className="header-back">
         <div className="header">
           <a href="http://instagram.com/"  className="header-left">
@@ -14,7 +15,12 @@ export default class SearchBar extends Component {
           </a>
 
           <div>
-            <input className="bar" placeholder="Search" />
+            <input className="bar" 
+            placeholder="Search" 
+            type="text"
+            value={props.post}
+            onKeyDown={props.updatePost}
+            />
           </div>
 
           <nav className="nav">
@@ -23,5 +29,9 @@ export default class SearchBar extends Component {
         </div>
       </div>
     );
-  }
 }
+
+
+
+
+export default SearchBar 

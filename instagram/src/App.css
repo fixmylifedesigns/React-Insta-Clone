@@ -4,7 +4,14 @@
   margin: 10px auto;
   background: rgb(245, 245, 245);
   line-height: 1;
+  
+  
 }
+
+.loader{
+margin: 15% 42%;
+}
+
 /* header */
 .header-back {
   padding: 5px 0px;

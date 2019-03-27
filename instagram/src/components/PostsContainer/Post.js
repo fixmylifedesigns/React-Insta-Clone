@@ -1,23 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import CommentSection from '../CommentSection/CommentSectionContainer';
-import LikeSection from './LikeSection';
-import PostHeader from './PostHeader';
+import React from "react";
+import PropTypes from "prop-types";
+import CommentSection from "../CommentSection/CommentSectionContainer";
+import LikeSection from "./LikeSection";
+import PostHeader from "./PostHeader";
+// import Loader from "../images/loading.gif";
 
-import './Posts.css';
+import "./Posts.css";
 
 class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      likes: props.post.likes
+      likes: props.post.likes,
+      id: false
     };
   }
   incrementLike = () => {
     let likes = this.state.likes + 1;
-    this.setState({ likes });
+    if (this.state.id === true) {
+      likes = this.state.likes - 1;
+    
+    }
+    this.setState({ likes, id: !this.state.id });
   };
-  render() {
+
+  render(props) {
+    // if (this.props.posts.length === 0) {
+    //   return <img src={Loader} className="loader" alt="loading" />;
+    // }
     return (
       <div className="post-border">
         <PostHeader
@@ -34,6 +44,7 @@ class Post extends React.Component {
         <LikeSection
           incrementLike={this.incrementLike}
           likes={this.state.likes}
+          id={this.state.id}
         />
         <CommentSection
           postId={this.props.post.imageUrl}

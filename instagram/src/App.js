@@ -1,42 +1,30 @@
 import React, { Component } from 'react';
 import './App.css';
-import dummyData from './dummy-data';
-import PostsContainer from './components/PostsContainer/PostsContainer';
-import SearchBar from './components/SearchBar/SearchBarContainer';
+import WithAuthentication from './components/Authentication/WithAuthentication'
+import PostsPage from './components/PostsContainer/PostsPage';
+import Login from './components/Login/Login'
+
+
+const ComponentWithAuthentication = WithAuthentication(Login)(PostsPage)
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: [],
-      filteredPosts: []
+      loggedIn: false
     };
   }
-  componentDidMount() {
-    this.setState({ posts: dummyData });
-  }
-  searchPostsHandler = e => {
-    const posts = this.state.posts.filter(p => {
-      if (p.username.includes(e.target.value)) {
-        return p;
-      }
-    });
-    this.setState({ filteredPosts: posts });
-  };
+  
+  toggleComponent = () => this.setState({loggedin: !this.state.loggedIn })
+
+
   render() {
     return (
       <div className="App">
-        <SearchBar
-          searchTerm={this.state.searchTerm}
-          searchPosts={this.searchPostsHandler}
-        />
-        <PostsContainer
-          posts={
-            this.state.filteredPosts.length > 0
-              ? this.state.filteredPosts
-              : this.state.posts
-          }
-        />
+      <Login />
+
+      <ComponentWithAuthentication loggedIn={this.state.loggedIn}/>
+      <button onClick={this.toggleComponent}>Login</button>
       </div>
     );
   }

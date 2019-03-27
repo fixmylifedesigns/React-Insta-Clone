@@ -8,6 +8,7 @@ const CommentInput = props => {
         value={props.comment}
         placeholder="Add comment... "
         onChange={props.changeComment}
+        className="input"
       />
     </form>
   );

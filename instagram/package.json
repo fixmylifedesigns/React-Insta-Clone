@@ -2,6 +2,13 @@
   "name": "instagram",
   "version": "0.1.0",
   "private": true,
+  
+  "rnpm": {
+    "asset": [
+      "./src/assets/fonts/"
+    ]
+  },
+
   "dependencies": {
     "font-awesome": "^4.7.0",
     "prop-types": "^15.6.1",

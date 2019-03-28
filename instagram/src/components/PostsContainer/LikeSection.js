@@ -1,24 +1,39 @@
 import React from 'react';
+import styled from "styled-components";
+
+const LikesSection = styled.div`
+display: flex;
+`
+const LikeSectionWrapper = styled.div `
+  height: 10px;
+  width: 10px;
+  margin: 10px;
+`
+
+
+
+const Strong = styled.strong``
 
 const LikeSection = props => {
   return [
-    <div
-      className="like-section"
+    <LikesSection
       key="likes-icons-container"
       onClick={props.incrementLike}
     >
-      <div className="like-section-wrapper">
+      <LikeSectionWrapper>
         <i className="far fa-heart" />
-      </div>
+      </LikeSectionWrapper>
 
-      <div className="like-section-wrapper">
+      <LikeSectionWrapper>
         <i className="far fa-comment" />
-      </div>
-    </div>,
+      </LikeSectionWrapper>
+    </LikesSection>,
 
-    <div className="like-section" key="likes-container">
-      <div className="like-section-wrapper"><strong>{props.likes}</strong></div>
-    </div>
+    <LikesSection key="likes-container">
+      <LikeSectionWrapper>
+        <Strong>{props.likes}</Strong>
+        </LikeSectionWrapper>
+    </LikesSection>
   ];
 };
 

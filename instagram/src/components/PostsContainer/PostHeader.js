@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import './Posts.css';
 
 const PostHeaderDiv = styled.div`
 display: flex;

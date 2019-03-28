@@ -1,11 +1,18 @@
-import React, { Component } from 'react';
-import './App.css';
-import WithAuthentication from './components/Authentication/WithAuthentication'
-import PostsPage from './components/PostsContainer/PostsPage';
-import Login from './components/Login/Login'
+import React, { Component } from "react";
+// import WithAuthentication from './components/Authentication/WithAuthentication'
+import PostsPage from "./components/PostsContainer/PostsPage";
+// import Login from "./components/Login/Login";
+import styled from "styled-components";
 
+const AppDiv = styled.div`
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #fafafa;
+`;
 
-const ComponentWithAuthentication = WithAuthentication(Login)(PostsPage)
+// const ComponentWithAuthentication = WithAuthentication(Login)(PostsPage)
 
 class App extends Component {
   constructor() {
@@ -14,18 +21,17 @@ class App extends Component {
       loggedIn: false
     };
   }
-  
-  toggleComponent = () => this.setState({loggedin: !this.state.loggedIn })
 
+  toggleComponent = () => this.setState({ loggedin: !this.state.loggedIn });
 
   render() {
     return (
-      <div className="App">
-      <Login />
-
-      <ComponentWithAuthentication loggedIn={this.state.loggedIn}/>
-      <button onClick={this.toggleComponent}>Login</button>
-      </div>
+      <AppDiv>
+        {/* <Login /> */}
+        <PostsPage />
+        {/* <ComponentWithAuthentication loggedIn={this.state.loggedIn}/>
+      <button onClick={this.toggleComponent}>Login</button> */}
+      </AppDiv>
     );
   }
 }

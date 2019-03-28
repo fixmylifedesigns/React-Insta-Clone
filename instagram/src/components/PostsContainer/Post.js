@@ -5,7 +5,21 @@ import LikeSection from "./LikeSection";
 import PostHeader from "./PostHeader";
 // import Loader from "../images/loading.gif";
 
-import "./Posts.css";
+import styled from "styled-components";
+
+const PostBorder = styled.div`
+border: 1px solid #d3d3d3;
+margin: 15px 0;
+box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+border-radius: 1%;
+`
+const PostImageWrapper = styled.div`
+height: 100%;
+width: 100%;
+`
+const PostImage = styled.img`
+width: 100%;
+`
 
 class Post extends React.Component {
   constructor(props) {
@@ -29,18 +43,17 @@ class Post extends React.Component {
     //   return <img src={Loader} className="loader" alt="loading" />;
     // }
     return (
-      <div className="post-border">
+      <PostBorder>
         <PostHeader
           username={this.props.post.username}
           thumbnailUrl={this.props.post.thumbnailUrl}
         />
-        <div className="post-image-wrapper">
-          <img
+        <PostImageWrapper>
+          <PostImage
             alt="post thumbnail"
-            className="post-image"
             src={this.props.post.imageUrl}
           />
-        </div>
+        </PostImageWrapper>
         <LikeSection
           incrementLike={this.incrementLike}
           likes={this.state.likes}
@@ -50,7 +63,7 @@ class Post extends React.Component {
           postId={this.props.post.imageUrl}
           comments={this.props.post.comments}
         />
-      </div>
+      </PostBorder>
     );
   }
 }

@@ -39,11 +39,13 @@ class Post extends React.Component {
   };
 
   render(props) {
-    // if (this.props.posts.length === 0) {
+    console.log('postProps', this.props.post)
+    // if (this.props.post.length === 0) {
     //   return <img src={Loader} className="loader" alt="loading" />;
     // }
     return (
       <PostBorder>
+        {/* <img src={Loader} className="loader" alt="loading" /> */}
         <PostHeader
           username={this.props.post.username}
           thumbnailUrl={this.props.post.thumbnailUrl}

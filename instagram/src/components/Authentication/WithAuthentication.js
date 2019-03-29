@@ -1,11 +1,13 @@
-import React from 'react';
-import App from '../../App';
+import React from "react";
 
+const WithAuthentication = App =>
+  class extends React.Component {
+    render() {
+      return <App 
+      toggleComponent={this.props.toggleComponent}
+      loggedIn={this.props.loggedIn}
+      />;
+    }
+  };
 
-// class WithAuthentication extends React.Component {
-//     render() {
-//       return <App />;
-//     }
-//   };
-
-//   export default WithAuthentication
+export default WithAuthentication;
